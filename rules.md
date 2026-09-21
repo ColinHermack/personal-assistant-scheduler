@@ -93,7 +93,7 @@ It gets blocked only when the whole 8 to 9 window is free. When it is busy there
 
 One hour, Tuesday and Thursday, plus one weekend day. Saturday is preferred; Sunday only when Saturday has no free hour for it. The gym is the one activity that may land on a Sunday with no due-date reason behind it.
 
-It is placed after task blocks and ahead of the filler ladder, in the first free hour left inside working hours. It never displaces a task block and never counts against the daily cap. When no free hour exists that day there is no gym — say so under "No time for".
+It is placed after task blocks and ahead of the filler ladder. It is not bound to working hours — it may land outside 8:30 AM to 6:30 PM, and never counts against the 6-hour task cap. 8 PM is the preferred hour; use it when free. Otherwise take the first free hour of the day, working hours or not. It never displaces a task block. When no free hour exists that day there is no gym — say so under "No time for".
 
 ## Jiu-jitsu
 
