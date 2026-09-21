@@ -6,15 +6,21 @@ The manual version of this workflow has two steps: tasks go in the Reminders lis
 
 You stay in the loop. Every run shows you a proposal and waits. Nothing touches the calendar until you say yes.
 
-## Setup
+## Install
+
+Requires macOS with Xcode Command Line Tools (for `swiftc`). Install them with `xcode-select --install` if `swiftc -version` fails.
 
 ```sh
+git clone <this repo's URL>
+cd personal-assistant-scheduler
 make
 ```
 
-Compiles `src/pas.swift` to `bin/pas`. Swift and EventKit ship with macOS; there is nothing to install.
+`make` compiles `src/pas.swift` to `bin/pas`. Swift and EventKit ship with macOS; there is nothing else to install for the binary itself.
 
 The first run from any given app prompts for Reminders and Calendar access. macOS attaches those grants to the app that launched the binary, not to the binary, so Terminal.app and iTerm each ask once. Click through it and it stays quiet after that.
+
+To use `/reschedule` from Claude Code (optional, only needed for the Claude Code workflow below), install the Claude Code CLI per [its docs](https://docs.claude.com/en/docs/claude-code), then run `claude` from inside this project directory. The `/reschedule` command comes from `.claude/commands/reschedule.md`, already checked into this repo, so cloning it is enough.
 
 ## Daily use
 
