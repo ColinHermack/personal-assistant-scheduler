@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+src="$(cd "$(dirname "$0")/.." && pwd)/.claude/skills/reschedule"
+dst="$HOME/.claude/skills/reschedule"
+mkdir -p "$HOME/.claude/skills"
+if [ -e "$dst" ] && [ ! -L "$dst" ]; then
+  echo "refusing to overwrite $dst (not a symlink)" >&2
+  exit 1
+fi
+ln -sf "$src" "$dst"
+echo "linked $dst -> $src"

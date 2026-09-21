@@ -20,7 +20,7 @@ make
 
 The first run from any given app prompts for Reminders and Calendar access. macOS attaches those grants to the app that launched the binary, not to the binary, so Terminal.app and iTerm each ask once. Click through it and it stays quiet after that.
 
-To use `/reschedule` from Claude Code (optional, only needed for the Claude Code workflow below), install the Claude Code CLI per [its docs](https://docs.claude.com/en/docs/claude-code), then run `claude` from inside this project directory. The `/reschedule` command comes from `.claude/commands/reschedule.md`, already checked into this repo, so cloning it is enough.
+To use the reschedule skill from Claude Code (optional, only needed for the Claude Code workflow below), install the Claude Code CLI per [its docs](https://docs.claude.com/en/docs/claude-code), then run `bin/install-skill`. That symlinks `.claude/skills/reschedule` (checked into this repo) into `~/.claude/skills/reschedule`, so it works from any directory, not just this one, and from the Claude app too. Re-run it after cloning to a new machine.
 
 ## Daily use
 
@@ -31,7 +31,7 @@ bin/reschedule            # next 7 days
 bin/reschedule 3 days     # shorter horizon
 ```
 
-Or from inside a Claude Code session in this project, `/reschedule`.
+Or from any Claude Code session, or the Claude app, just ask it to reschedule your tasks (once `bin/install-skill` has been run — see Install above).
 
 Either way you get a table of proposed blocks in local time, a list of anything that would not fit and why, and a list of any rule that had to be bent. Read it. Say yes to apply the whole table, or say what is wrong and get a new proposal. There is no partial apply — changing one row means proposing again, which takes seconds.
 
@@ -76,7 +76,7 @@ bin/pas events <startISO> <endISO>   # events across all calendars as JSON
 bin/pas apply <plan.json>            # the only write path
 ```
 
-Dates are ISO 8601 UTC in and out. The scheduling judgment lives in `.claude/commands/reschedule.md` and `rules.md`, where you can read and change it.
+Dates are ISO 8601 UTC in and out. The scheduling judgment lives in `.claude/skills/reschedule/SKILL.md` and `rules.md`, where you can read and change it.
 
 There is no database. Reminders and Calendar are the state, and the link between a block and its task rides in the event's own notes, so it syncs to every device on its own.
 
