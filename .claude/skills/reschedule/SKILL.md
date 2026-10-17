@@ -49,7 +49,7 @@ An event on `Time Blocking` whose notes contain `pas-task:` was created by a pre
 - **Marked, already started** — leave it alone. Past blocks are the record of where the time actually went, and `pas apply` refuses to delete them anyway. Listing one turns the whole plan into a refusal. They still count, as time spent, in the next section.
 - **Unmarked** — a hand-created commitment. Immovable, same as a class. Never on the delete list.
 
-A marked block whose id starts with `routine:` is one of this run's own email, filler or jiu-jitsu blocks. It follows the same three rules — future ones are superseded, started ones are left alone. Routine blocks are rebuilt from scratch every run.
+A marked block whose id starts with `routine:` is one of this run's own run, email, gym, physical therapy or course review blocks. It follows the same three rules — future ones are superseded, started ones are left alone. Routine blocks are rebuilt from scratch every run.
 
 ## 5. What already happened
 
@@ -76,9 +76,9 @@ The day is filled in this order, and each step only uses what the steps above it
 1. **The morning run** — 8 to 9 AM Monday, Wednesday and Friday, when that whole hour is free. The only thing that may start before 8:30.
 2. **Email** — 30 minutes, the first free half hour at or after 8:30 AM, Monday through Saturday.
 3. **Task blocks** — the existing rules, up to the 6-hour cap. Tasks are the priority; nothing below this line may displace one.
-4. **The shower hour** — reserved the moment a jiu-jitsu block is going to be placed that day. Nothing goes in it. The 4:30 prep half hour is reserved with it.
-5. **Gym** — one hour on Tuesday, Thursday and one weekend day, Saturday preferred over Sunday.
-6. **Filler** — down the ladder in `rules.md`, at most one hour per activity per day, only in time still unblocked inside working hours.
+4. **Gym**: one hour Tuesday (upper), Thursday (lower), Saturday (upper) and Sunday (lower). On Sunday this is the only block.
+5. **Physical therapy**: 30 minutes on each Monday-to-Saturday day with no run block, inside working hours when room is left there.
+6. **Course review**: one hour per course per day at most, rotated so CS355, CS422 and MA425 get equal time, only in time still unblocked inside working hours.
 
 Every block placed here is followed by its break — 5 minutes under an hour, 10 minutes at an hour or more — and the break is busy time for everything after it.
 
@@ -90,7 +90,7 @@ A table, local times:
 
 When a task is sized down because of history, say so in the "why this slot" column — `2h of 3h already done`, or `note says 70% done`.
 
-Routine blocks share the table. Their "why this slot" says which they are — `daily email`, `filler, 1st priority`, `Fri practice`.
+Routine blocks share the table. Their "why this slot" says which they are — `daily email`, `gym, upper body`, `PT, no run today`, `review, CS422 least reviewed`.
 
 When the delete list is non-empty, a line above the table saying what is being replaced and why. Name the freed time specifically when it came from finished work: `Homework 2 is checked off, freeing 2h on Thursday`. A run that silently deletes is a run nobody can audit.
 
@@ -98,7 +98,7 @@ Then two lists, which matter more than the table:
 
 - **Not scheduled** — every task you could not fit, each with the reason (no room before the due date, over the daily cap, no estimate and none assumable).
 - **Rules bent** — anything in `rules.md` you had to work around, and why.
-- **No time for** — every ladder activity that got nothing that day, with the reason (`no free hour`, `5 PM busy`). A day where the filler ladder got nothing is worth seeing.
+- **No time for**: every routine (gym, physical therapy, course review) that got nothing that day, with the reason (`no free hour`, `no free half hour`). A day where course review got nothing is worth seeing.
 
 A proposal that silently drops a task is worse than one that admits it ran out of room.
 
@@ -122,7 +122,7 @@ Write a plan file to a temp path:
 }
 ```
 
-Routine blocks have no reminder behind them, so they carry a synthetic `taskId` — `routine:email`, `routine:interview-prep`, `routine:course-review`, `routine:job-apps`, `routine:jiujitsu`, `routine:jiujitsu-prep`, `routine:run`, `routine:gym` — and a `title` that is the activity name (`Email`, `Review CS355`, `Jiu-jitsu practice`, `Jiu-jitsu prep`, `Run and shower`, `Gym`). `pas` only requires the id be non-empty, and the `pas-task:` marker it writes is what lets the next run supersede the block.
+Routine blocks have no reminder behind them, so they carry a synthetic `taskId` — `routine:email`, `routine:course-review`, `routine:run`, `routine:gym`, `routine:pt` — and a `title` that is the activity name (`Email`, `Review CS355`, `Run and shower`, `Gym: upper body`, `Gym: lower body`, `Physical therapy`). `pas` only requires the id be non-empty, and the `pas-task:` marker it writes is what lets the next run supersede the block.
 
 Times go back to UTC here — the table is for humans, the plan file is for the binary. `title` is the task title exactly as the reminder has it. Omit `calendarId`; `pas` knows where it writes.
 
