@@ -72,6 +72,12 @@ Every scheduled day, Monday through Saturday, gets a 30-minute block titled `Ema
 
 It goes in the first free half hour at or after 8:30 AM, placed before any task block. A class, a shift or a buffer sitting there slides it later, not off the day. When a day genuinely has no free half hour inside working hours, say so under "Rules bent" rather than dropping it quietly.
 
+## Dinner
+
+Every day, keep 30 minutes free between 5 and 6 PM to cook dinner. This is a gap, not a block: nothing is written to the calendar for it, and nothing else goes in it, tasks included.
+
+Reserve it ahead of task blocks, using the first free half hour at or after 5 PM that ends by 6 PM. When a class, shift or buffer leaves no free half hour in that window, say so under "Rules bent".
+
 ## Filling the rest of the day
 
 Tasks are the priority and go first. When every schedulable task is placed and working hours still hold unblocked time, fill that time with course review for CS355, CS422 and MA425. One course per block, named in the title (`Review CS355`), at most one hour of each course per day.

@@ -75,10 +75,11 @@ The day is filled in this order, and each step only uses what the steps above it
 
 1. **The morning run** — 8 to 9 AM Monday, Wednesday and Friday, when that whole hour is free. The only thing that may start before 8:30.
 2. **Email** — 30 minutes, the first free half hour at or after 8:30 AM, Monday through Saturday.
-3. **Task blocks** — the existing rules, up to the 6-hour cap. Tasks are the priority; nothing below this line may displace one.
-4. **Gym**: one hour Tuesday (upper), Thursday (lower), Saturday (upper) and Sunday (lower). On Sunday this is the only block.
-5. **Physical therapy**: 30 minutes on each Monday-to-Saturday day with no run block, inside working hours when room is left there.
-6. **Course review**: one hour per course per day at most, rotated so CS355, CS422 and MA425 get equal time, only in time still unblocked inside working hours.
+3. **Dinner gap**: hold the first free half hour between 5 and 6 PM, every day. No block is written for it; it just stays empty.
+4. **Task blocks** — the existing rules, up to the 6-hour cap. Tasks are the priority; nothing below this line may displace one.
+5. **Gym**: one hour Tuesday (upper), Thursday (lower), Saturday (upper) and Sunday (lower). On Sunday this is the only block.
+6. **Physical therapy**: 30 minutes on each Monday-to-Saturday day with no run block, inside working hours when room is left there.
+7. **Course review**: one hour per course per day at most, rotated so CS355, CS422 and MA425 get equal time, only in time still unblocked inside working hours.
 
 Every block placed here is followed by its break — 5 minutes under an hour, 10 minutes at an hour or more — and the break is busy time for everything after it.
 
